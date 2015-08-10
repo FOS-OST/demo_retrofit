@@ -1,4 +1,4 @@
-package com.example.vanhung.androidwebservice;
+package com.example.vanhung.androidwebservice.Model;
 
 /**
  * Created by vanhung on 10/08/2015.

@@ -1,0 +1,4 @@
+@GET http get
+@POST HTTp post
+@QUERY pass param to url as get when URl have format:http://api.openweathermap.org/data/2.5/weather?q=California
+@PATH assign value to url when url have format :http://46.101.56.207/api/posts/{id}/questions

@@ -1,14 +1,14 @@
 package com.example.vanhung.androidwebservice;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
+import com.example.vanhung.androidwebservice.Model.QuestionManage;
 import com.example.vanhung.androidwebservice.Model.WeatherResponse;
+import com.example.vanhung.androidwebservice.restclient.GETClient;
 import com.example.vanhung.androidwebservice.restclient.RestClient;
 
 import retrofit.Callback;
@@ -16,41 +16,31 @@ import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 
-public class MainActivity extends ActionBarActivity {
+public class GETClientActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        //url for view json data return by server
-        //http://api.openweathermap.org/data/2.5/weather?q=California
+        setContentView(R.layout.activity_getclient);
 
-        RestClient.get().getWeather("California", new Callback<WeatherResponse>() {
+        GETClient.get().getQuestion(1, new Callback<QuestionManage>() {
+
             @Override
-            public void success(WeatherResponse weatherResponse, Response response) {
-
-                Toast.makeText(MainActivity.this,weatherResponse.getBase(),Toast.LENGTH_SHORT).show();
+            public void success(QuestionManage questionManage, Response response) {
+                Toast.makeText(GETClientActivity.this,"test",Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void failure(RetrofitError error) {
-                // something went wrong
-                Toast.makeText(MainActivity.this,"loi",Toast.LENGTH_SHORT).show();
+
             }
         });
-
-    }
-
-    public void demoGetHttp(View v)
-    {
-        Intent intent=new Intent(MainActivity.this,GETClientActivity.class);
-        startActivity(intent);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_getclient, menu);
         return true;
     }
 

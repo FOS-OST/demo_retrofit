@@ -1,4 +1,6 @@
-package com.example.vanhung.androidwebservice;
+package com.example.vanhung.androidwebservice.Model;
+
+import com.example.vanhung.androidwebservice.Model.Weather;
 
 import java.util.List;
 

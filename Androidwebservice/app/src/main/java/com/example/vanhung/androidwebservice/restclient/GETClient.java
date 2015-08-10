@@ -1,28 +1,27 @@
-package com.example.vanhung.androidwebservice;
+package com.example.vanhung.androidwebservice.restclient;
 
-import com.squareup.okhttp.OkHttpClient;
+import com.example.vanhung.androidwebservice.api.GETAPI;
 
 import retrofit.RestAdapter;
-import retrofit.client.OkClient;
 
 /**
  * Created by vanhung on 10/08/2015.
  */
 
 
-    public class RestClient {
+    public class GETClient {
 
-        private static API REST_CLIENT;
+        private static GETAPI REST_CLIENT;
         private static String ROOT =
-                "http://api.openweathermap.org/data/2.5";
+                "http://46.101.56.207/api";
 
         static {
             setupRestClient();
         }
 
-        private RestClient() {}
+        private GETClient() {}
 
-        public static API get() {
+        public static GETAPI get() {
             return REST_CLIENT;
         }
 
@@ -30,7 +29,7 @@ import retrofit.client.OkClient;
             RestAdapter restAdapter = new RestAdapter.Builder()
                     .setEndpoint(ROOT)
                     .build();
-            REST_CLIENT = restAdapter.create(API.class);
+            REST_CLIENT = restAdapter.create(GETAPI.class);
         }
     }
 

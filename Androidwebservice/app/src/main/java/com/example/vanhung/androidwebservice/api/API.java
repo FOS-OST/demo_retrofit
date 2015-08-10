@@ -1,4 +1,6 @@
-package com.example.vanhung.androidwebservice;
+package com.example.vanhung.androidwebservice.api;
+
+import com.example.vanhung.androidwebservice.Model.WeatherResponse;
 
 import retrofit.Callback;
 import retrofit.http.GET;
